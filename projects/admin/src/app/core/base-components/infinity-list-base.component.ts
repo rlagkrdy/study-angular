@@ -6,6 +6,7 @@ import {
   SubscriptionBaseComponent
 } from "../../../../../study-angular/src/lib/core/base-components/subscription/subscription-base.component";
 
+
 @Directive()
 // tslint:disable-next-line:directive-class-suffix
 export abstract class InfinityListBaseComponent<E extends BaseEntity>
