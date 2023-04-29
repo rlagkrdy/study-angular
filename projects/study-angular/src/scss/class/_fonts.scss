@@ -1,0 +1,74 @@
+.text_48_b {
+  @include text_48_b;
+}
+
+.text_40_b {
+  @include text_40_b;
+}
+
+.text_32_b {
+  @include text_32_b;
+}
+
+.text_32_m {
+  @include text_32_m;
+}
+
+.text_24_b {
+  @include text_24_b;
+}
+
+.text_24_m {
+  @include text_24_m;
+}
+
+.text_20_b {
+  @include text_20_b;
+}
+
+.text_16_b {
+  @include text_16_b;
+}
+
+.text_16_m {
+  @include text_16_m;
+}
+
+.text_16_r {
+  @include text_16_r;
+}
+
+.text_14_b {
+  @include text_14_b;
+}
+
+.text_14_m {
+  @include text_14_m;
+}
+
+.text_14_r {
+  @include text_14_r;
+}
+
+.text_12_r {
+  @include text_12_r;
+}
+
+.line-height {
+  @include line-height;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+
+.text-ellipsis {
+  @include ellipsis;
+}

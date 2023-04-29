@@ -1,0 +1,23 @@
+<form [formGroup]="formGroup">
+  <div class="birth-form-field">
+    <div class="year-box">
+      <lib-select-box-form-field label="생일" formControlName="year">
+        <option value="" selected disabled hidden>년도</option>
+
+        <option *ngFor="let yearOption of yearOptions" [value]="yearOption" >
+          {{ yearOption }}년
+        </option>
+      </lib-select-box-form-field>
+    </div>
+
+    <div class="month-box">
+      <lib-select-box-form-field formControlName="month">
+        <option value="" selected disabled hidden>월</option>
+
+        <option *ngFor="let monthOption of monthOptions" [value]="monthOption">
+          {{ monthOption }}월
+        </option>
+      </lib-select-box-form-field>
+    </div>
+  </div>
+</form>

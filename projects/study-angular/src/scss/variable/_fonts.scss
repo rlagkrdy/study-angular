@@ -1,0 +1,148 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css");
+
+@mixin text_48_b {
+  font-size: 48px;
+  font-weight: bold;
+  line-height: normal;
+  color: inherit;
+}
+
+@mixin text_40_b {
+  font-size: 40px;
+  font-weight: bold;
+  line-height: normal;
+  color: inherit;
+}
+
+@mixin text_32_b {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: normal;
+  color: inherit;
+}
+
+@mixin text_32_m {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: normal;
+  color: inherit;
+}
+
+@mixin text_24_b {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: normal;
+  color: inherit;
+}
+
+@mixin text_24_m {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: normal;
+  color: inherit;
+}
+
+@mixin text_22_b {
+  font-size: 22px;
+  font-weight: bold;
+  line-height: normal;
+  color: inherit;
+}
+
+@mixin text_20_b {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: normal;
+  color: inherit;
+}
+
+@mixin text_20_r {
+  font-size: 20px;
+  line-height: normal;
+  color: inherit;
+}
+
+@mixin text_16_b {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: normal;
+  color: inherit;
+}
+
+@mixin text_16_m {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  color: inherit;
+}
+
+@mixin text_16_r {
+  font-size: 16px;
+  line-height: normal;
+  color: inherit;
+}
+
+@mixin text_14_b {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: normal;
+  color: inherit;
+}
+
+@mixin text_14_m {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
+  color: inherit;
+}
+
+@mixin text_14_r {
+  font-size: 14px;
+  line-height: normal;
+  color: inherit;
+}
+
+@mixin text_12_b {
+  font-size: 12px;
+  line-height: normal;
+  color: inherit;
+  font-weight: bold;
+}
+
+@mixin text_12_m {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: normal;
+  color: inherit;
+}
+
+@mixin text_12_r {
+  font-size: 12px;
+  line-height: normal;
+  color: inherit;
+}
+
+
+@mixin text_10_b {
+  font-size: 10px;
+  line-height: normal;
+  color: inherit;
+  font-weight: bold;
+}
+
+@mixin text_10_m {
+  font-size: 10px;
+  font-weight: 500;
+  line-height: normal;
+  color: inherit;
+}
+
+@mixin text_10_r {
+  font-size: 10px;
+  line-height: normal;
+  color: inherit;
+}
+
+@mixin line-height {
+  line-height: 1.5;
+}

@@ -1,0 +1,12 @@
+<swiper
+  #swiper
+  [config]="config"
+  (swiper)="onSwiper.emit($event)"
+  (slideChange)="onSlideChange.emit($event)"
+>
+  <ng-template *ngFor="let slide of slidesEl" swiperSlide>
+    <ng-container *ngTemplateOutlet="slide.templateRef"></ng-container>
+  </ng-template>
+</swiper>
+
+

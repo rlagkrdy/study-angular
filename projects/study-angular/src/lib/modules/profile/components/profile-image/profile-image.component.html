@@ -1,0 +1,19 @@
+<div class="profile-image-wrap">
+  <div class="profile-image-box">
+    <div
+      class="profile-image"
+      [ngStyle]="{ backgroundImage: 'url(' + url + ')' }"
+    >
+      <p *ngIf="!url && isUpload" class="text_16_m gray-2">사진등록</p>
+    </div>
+
+    <div *ngIf="isLoading" class="loading-progress"></div>
+  </div>
+
+  <img
+    *ngIf="isUpload"
+    libSrc="/assets/icons/camera.png"
+    alt=""
+    class="camera-icon"
+  />
+</div>

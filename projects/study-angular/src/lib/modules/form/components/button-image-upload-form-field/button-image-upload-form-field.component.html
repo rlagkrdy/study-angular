@@ -1,0 +1,17 @@
+<div class="profile-image-upload-form-field">
+  <button
+    type="button"
+    class="lib-button add-button"
+    (click)="fileInput.click()"
+  >
+    <img libSrc="/assets/icons/sm-album.png" alt="plus icon" />
+    파일 올리기
+  </button>
+
+  <input
+    #fileInput
+    class="input"
+    (change)="upload($event.target)"
+    type="file"
+  />
+</div>

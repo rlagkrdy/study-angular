@@ -1,0 +1,16 @@
+<div class="input-form-field-box">
+  <label class="form-label" *ngIf="label" [for]="labelFor">
+    {{ label }}
+    <span *ngIf="highlight==='true'" class="red">(선택)</span>
+  </label>
+
+  <input
+    class="lib-input"
+    [id]="labelFor"
+    [type]="type"
+    [placeholder]="placeholder"
+    [formControl]="formCtrl"
+    [autocomplete]="labelFor + '-new'"
+    [name]="labelFor + '-new'"
+  />
+</div>

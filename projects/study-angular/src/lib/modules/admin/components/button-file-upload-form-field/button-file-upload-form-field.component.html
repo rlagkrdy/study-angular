@@ -1,0 +1,17 @@
+<div class="profile-image-upload-form-field">
+  <div class="upload-button-form-box">
+    <button mat-stroked-button (click)="fileInput.click()" type="button">
+      파일 {{ url ? '변경' : '업로드' }}
+    </button>
+
+    <mat-spinner *ngIf="isUploading" diameter="36"></mat-spinner>
+  </div>
+
+  <div *ngIf="url" class="preview-file-name-box">
+    <p class="file-name">{{ fileName }}</p>
+
+    <button mat-stroked-button (click)="remove(url)" type="button" color="accent">파일 삭제</button>
+  </div>
+
+  <input #fileInput class="input" (change)="upload($event.target)" type="file" [accept]="accept" />
+</div>

@@ -1,0 +1,11 @@
+<div class="input-form-field-box">
+  <label class="form-label" *ngIf="label" [for]="labelFor">{{ label }}</label>
+
+  <textarea
+    class="lib-input lib-textarea"
+    [id]="labelFor"
+    [placeholder]="placeholder"
+    [formControl]="formCtrl"
+    [name]="labelFor + '-new'"
+  ></textarea>
+</div>

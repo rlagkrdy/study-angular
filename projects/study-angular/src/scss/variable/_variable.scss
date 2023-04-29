@@ -1,0 +1,30 @@
+$lg-layout-margin-top: 88px;
+$lg-full-height: calc(100vh - 88px);
+
+@mixin default-border {
+  border: 1px solid $gray-2;
+}
+
+@mixin default-border-bottom {
+  border: 1px solid $gray-2;
+}
+
+@mixin input-default-font {
+  @include text_16_r;
+}
+
+@mixin label-default-font {
+  @include text_14_b;
+}
+
+@mixin size-md-font {
+  @include text_16_m;
+}
+
+@mixin size-sm-font {
+  @include text-14_r;
+}
+
+@mixin size-xs-font {
+  @include text-14_r;
+}

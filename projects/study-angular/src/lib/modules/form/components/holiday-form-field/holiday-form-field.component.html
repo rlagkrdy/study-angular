@@ -1,0 +1,14 @@
+<div class="input-form-field-box">
+  <label class="form-label" *ngIf="label" [for]="labelFor">{{ label }}</label>
+
+  <ul class="holiday-list">
+    <li
+      *ngFor="let holiday of holidays"
+      class="holiday-item"
+      [class.active]="isActive(holiday)"
+      (click)="toggle(holiday)"
+    >
+      {{ holiday }}
+    </li>
+  </ul>
+</div>

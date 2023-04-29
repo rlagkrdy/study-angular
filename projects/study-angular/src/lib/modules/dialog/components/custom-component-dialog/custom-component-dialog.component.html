@@ -1,0 +1,27 @@
+<section class="custom-component-dialog-section">
+  <div class="custom-component-dialog-box">
+    <ng-container
+      *ngComponentOutlet="component; injector: dataInject"
+    ></ng-container>
+  </div>
+
+  <div *ngIf="confirmButtonText || cancelButtonText" class="dialog-button-box">
+    <button
+      *ngIf="cancelButtonText"
+      class="dialogs-button"
+      type="button"
+      [matDialogClose]="false"
+    >
+      {{ cancelButtonText }}
+    </button>
+
+    <button
+      *ngIf="confirmButtonText"
+      class="dialogs-button confirm-button"
+      type="button"
+      [matDialogClose]="true"
+    >
+      {{ confirmButtonText }}
+    </button>
+  </div>
+</section>

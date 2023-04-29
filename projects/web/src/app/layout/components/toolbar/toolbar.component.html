@@ -1,0 +1,291 @@
+<div
+  class="toolbar-box"
+  [class.toolbar__transparent]="isTransparent"
+  (mouseenter)="this.isHover$.next(true)"
+  (mouseleave)="this.isHover$.next(false)"
+>
+  <div class="toolbar-inner-box">
+    <div class="left-box">
+      <a class="toolbar-logo-link" routerLink="/index">
+        <img libSrc="/assets/icons/toolbar-logo-color.png" alt="c&tech logo" class="toolbar-logo" />
+        <img libSrc="/assets/icons/toolbar-logo.png" alt="c&tech logo" class="toolbar-logo" />
+      </a>
+    </div>
+
+    <div class="right-box">
+      <nav class="toolbar-nav">
+        <ul class="toolbar-list">
+          <li class="toolbar-item">
+            <a class="toolbar-link" routerLink="/about" routerLinkActive="active">{{
+              'NAV.MENU1' | translate
+            }}</a>
+          </li>
+
+          <li class="toolbar-item">
+            <a class="toolbar-link" routerLink="/solution" routerLinkActive="active">{{
+              'NAV.MENU2' | translate
+            }}</a>
+          </li>
+
+          <li class="toolbar-item">
+            <a class="toolbar-link" routerLink="/iot" routerLinkActive="active">{{
+              'NAV.MENU3' | translate
+            }}</a>
+          </li>
+
+          <li class="toolbar-item">
+            <a class="toolbar-link" routerLink="announcement" routerLinkActive="active">{{
+              'NAV.MENU4' | translate
+            }}</a>
+          </li>
+
+          <li class="toolbar-item">
+            <a class="toolbar-link" routerLink="recruitment" routerLinkActive="active">{{
+              'NAV.MENU5' | translate
+            }}</a>
+          </li>
+
+          <li class="toolbar-item">
+            <a class="toolbar-link" routerLink="download" routerLinkActive="active">{{
+              'NAV.MENU6' | translate
+            }}</a>
+          </li>
+        </ul>
+      </nav>
+
+      <ul class="language-list">
+        <li class="language-item"><a class="language-link active">KR</a></li>
+
+        <li class="language-item divider">l</li>
+
+        <li class="language-item">
+          <a class="language-link" (click)="changeLanguage('en')">EN</a>
+        </li>
+      </ul>
+
+      <a class="toolbar-menu-link" (click)="openMenu()">
+        <i class="svg-icon toolbar-menu-icon"> </i>
+      </a>
+    </div>
+  </div>
+
+  <div class="bottom-menu-box" [class.bottom-menu-box__open]="isOpen">
+    <div class="bottom-menu-inner-box">
+      <ul class="bottom-menu-list">
+        <li class="bottom-menu-item">
+          <a class="bottom-menu-link" routerLink="/solution/asset-management">{{
+            'NAV.MENU2_1' | translate
+          }}</a>
+        </li>
+        <li class="bottom-menu-item">
+          <a class="bottom-menu-link" routerLink="/solution/smart-building">{{
+            'NAV.MENU2_2' | translate
+          }}</a>
+        </li>
+        <li class="bottom-menu-item">
+          <a class="bottom-menu-link" routerLink="/solution/smart-factory">{{
+            'NAV.MENU2_3' | translate
+          }}</a>
+        </li>
+      </ul>
+
+      <ul class="bottom-menu-list">
+        <li class="bottom-menu-item">
+          <a class="bottom-menu-link" routerLink="/iot/cn102">{{ 'NAV.MENU3_1' | translate }}</a>
+        </li>
+        <li class="bottom-menu-item">
+          <a class="bottom-menu-link" routerLink="/iot/ara1">{{ 'NAV.MENU3_2' | translate }}</a>
+        </li>
+        <li class="bottom-menu-item">
+          <a class="bottom-menu-link" routerLink="/iot/iron">
+            {{ 'NAV.MENU3_3' | translate }}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="toolbar-mobile-menu-box" [class.menu__open]="isMenuOpen">
+  <div class="toolbar-mobile-inner-box">
+    <div class="top-box">
+      <div class="toolbar-mobile-menu-header-box">
+        <a class="toolbar-logo-link">
+          <img
+            libSrc="/assets/icons/toolbar-logo-color.png"
+            alt="c&tech logo"
+            class="toolbar-logo"
+          />
+        </a>
+
+        <a class="toolbar-close-link">
+          <img src="/assets/icons/menu-close-icon.png" alt="menu-close-icon" />
+        </a>
+      </div>
+
+      <nav class="nav-toolbar-mobile-nav">
+        <ul class="toolbar-mobile-nav-list">
+          <li class="toolbar-mobile-nav-item">
+            <a
+              class="toolbar-mobile-nav-link toolbar-close-link"
+              routerLink="/about"
+              routerLinkActive="active"
+              >{{ 'NAV.MENU1' | translate }}</a
+            >
+          </li>
+
+          <li
+            class="toolbar-mobile-nav-item"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a class="toolbar-mobile-nav-link toolbar-child-menu-toggle">
+              {{ 'NAV.MENU2' | translate }}
+
+              <div class="sub-menu-button-icon-box">
+                <img
+                  class="sub-menu-icon sub-menu-close-icon"
+                  src="/assets/icons/menu-minus-icon.png"
+                  alt="menu-minus-icon"
+                />
+
+                <img
+                  class="sub-menu-icon sub-menu-open-icon"
+                  src="/assets/icons/menu-open-icon.png"
+                  alt="menu-open-icon"
+                />
+              </div>
+            </a>
+
+            <ul class="toolbar-mobile-child-menu-list">
+              <li class="toolbar-mobile-child-menu-item">
+                <a
+                  class="toolbar-mobile-child-menu-link toolbar-close-link"
+                  routerLink="/solution/asset-management"
+                  routerLinkActive="active"
+                >
+                  {{ 'NAV.MENU2_1' | translate }}
+                </a>
+              </li>
+
+              <li class="toolbar-mobile-child-menu-item">
+                <a
+                  class="toolbar-mobile-child-menu-link toolbar-close-link"
+                  routerLink="/solution/smart-building"
+                  routerLinkActive="active"
+                >
+                  {{ 'NAV.MENU2_2' | translate }}
+                </a>
+              </li>
+
+              <li class="toolbar-mobile-child-menu-item">
+                <a
+                  class="toolbar-mobile-child-menu-link toolbar-close-link"
+                  routerLink="/solution/smart-factory"
+                  routerLinkActive="active"
+                >
+                  {{ 'NAV.MENU2_3' | translate }}
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li
+            class="toolbar-mobile-nav-item"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a class="toolbar-mobile-nav-link toolbar-child-menu-toggle">
+              {{ 'NAV.MENU3' | translate }}
+
+              <div class="sub-menu-button-icon-box">
+                <img
+                  class="sub-menu-icon sub-menu-close-icon"
+                  src="/assets/icons/menu-minus-icon.png"
+                  alt="menu-minus-icon"
+                />
+
+                <img
+                  class="sub-menu-icon sub-menu-open-icon"
+                  src="/assets/icons/menu-open-icon.png"
+                  alt="menu-open-icon"
+                />
+              </div>
+            </a>
+
+            <ul class="toolbar-mobile-child-menu-list">
+              <li class="toolbar-mobile-child-menu-item">
+                <a
+                  class="toolbar-mobile-child-menu-link toolbar-close-link"
+                  routerLink="/iot/cn102"
+                  routerLinkActive="active"
+                >
+                  {{ 'NAV.MENU3_1' | translate }}
+                </a>
+              </li>
+
+              <li class="toolbar-mobile-child-menu-item">
+                <a
+                  class="toolbar-mobile-child-menu-link toolbar-close-link"
+                  routerLink="/iot/ara1"
+                  routerLinkActive="active"
+                >
+                  {{ 'NAV.MENU3_2' | translate }}
+                </a>
+              </li>
+
+              <li class="toolbar-mobile-child-menu-item">
+                <a
+                  class="toolbar-mobile-child-menu-link toolbar-close-link"
+                  routerLink="/iot/iron"
+                  routerLinkActive="active"
+                >
+                  {{ 'NAV.MENU3_3' | translate }}
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="toolbar-mobile-nav-item">
+            <a
+              class="toolbar-mobile-nav-link toolbar-close-link"
+              routerLink="/announcement"
+              routerLinkActive="active"
+              >{{ 'NAV.MENU4' | translate }}</a
+            >
+          </li>
+
+          <li class="toolbar-mobile-nav-item">
+            <a
+              class="toolbar-mobile-nav-link toolbar-close-link"
+              routerLink="/recruitment"
+              routerLinkActive="active"
+              >{{ 'NAV.MENU5' | translate }}</a
+            >
+          </li>
+
+          <li class="toolbar-mobile-nav-item">
+            <a
+              class="toolbar-mobile-nav-link toolbar-close-link"
+              routerLink="/download"
+              routerLinkActive="active"
+              >{{ 'NAV.MENU6' | translate }}</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="bottom-box">
+      <ul class="language-list">
+        <li class="language-item"><a class="language-link active">KR</a></li>
+
+        <li class="language-item divider">l</li>
+
+        <li class="language-item">
+          <a class="language-link" (click)="changeLanguage('en')">EN</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

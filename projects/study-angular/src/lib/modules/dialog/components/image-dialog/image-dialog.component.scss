@@ -1,0 +1,35 @@
+@import "core";
+
+.dialog-image-box {
+  position: relative;
+  border-radius: 16px;
+  border: solid 1px $gray-3;
+  overflow: hidden;
+  margin-bottom: $spacing-xl;
+
+  .dialog-image {
+    width: 100%;
+  }
+
+  .dialog-close {
+    position: absolute;
+    top: $spacing-l;
+    right: $spacing-l;
+    display: block;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.dialog-button-box {
+  .dialog-close-link {
+    @include text_16_r;
+    color: $white;
+    text-decoration: underline;
+    display: block;
+    margin-top: $spacing-xxl;
+    text-align: center;
+  }
+}

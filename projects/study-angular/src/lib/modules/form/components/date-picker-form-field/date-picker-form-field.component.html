@@ -1,0 +1,22 @@
+<div class="input-form-field-box">
+  <label class="form-label" *ngIf="label" [for]="labelFor">{{ label }}</label>
+
+  <div class="lib-input-box">
+    <input
+      class="lib-input"
+      [id]="labelFor"
+      [placeholder]="placeholder"
+      [formControl]="formCtrl"
+      [matDatepicker]="picker"
+      (click)="picker.open()"
+      readonly
+    />
+    <mat-datepicker #picker></mat-datepicker>
+
+    <img
+      libSrc="/assets/icons/calendar.png"
+      alt="calendar icon"
+      (click)="picker.open()"
+    />
+  </div>
+</div>

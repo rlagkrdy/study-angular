@@ -1,0 +1,17 @@
+@import 'core';
+
+
+.postcode-input-box {
+  position: relative;
+
+ .postcode-button {
+   position: absolute;
+   top: 20px;
+   right: 16px;
+   @include text_16_b;
+   color: $mint;
+ }
+}
+.lib-input {
+  @include margin-bottom-without-last-child($spacing-l);
+}

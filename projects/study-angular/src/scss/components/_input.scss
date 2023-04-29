@@ -1,0 +1,56 @@
+.form-label {
+  @include label-default-font;
+  display: block;
+  margin-bottom: $spacing-l;
+}
+
+.lib-input {
+  @include input-default-font;
+  width: 100%;
+  padding: 19px 16px;
+  border-radius: 8px;
+  @include default-border;
+  background-color: #fff;
+
+  &::placeholder {
+    color: $gray-2;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $mint;
+  }
+}
+
+.mat-radio-button {
+  .mat-radio-container {
+    width: 24px;
+    height: 24px;
+    .mat-radio-outer-circle,
+    .mat-radio-inner-circle {
+      width: inherit;
+      height: inherit;
+    }
+  }
+
+  .mat-radio-outer-circle {
+    border-color: $gray-3;
+    background-color: $gray-3;
+  }
+
+  &.mat-radio-checked {
+    .mat-radio-outer-circle {
+      border-color: $mint;
+      background-color: $white;
+    }
+    .mat-radio-inner-circle {
+      background-color: $mint;
+    }
+  }
+
+  .mat-radio-label-content {
+    @include input-default-font;
+    padding-left: $spacing-xxs;
+    line-height: 24px;
+  }
+}

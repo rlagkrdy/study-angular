@@ -1,0 +1,46 @@
+.lib-bottom-sheet-backdrop {
+  background-color: rgba(0, 0, 0, 0.32);
+}
+
+.lib-bottom-sheet-backdrop + .cdk-global-overlay-wrapper {
+  .cdk-overlay-pane {
+    max-width: 100vw !important;
+  }
+}
+
+.lib-bottom-sheet-panel {
+  padding: 0 !important;
+}
+
+.lib-bottom-sheet-box {
+  position: relative;
+  padding: 32px 16px 40px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  box-shadow: 0 -5px 10px 0 rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+
+  .close-icon {
+    position: absolute;
+    top: 32px;
+    right: 16px;
+  }
+
+  .lib-bottom-sheet-title {
+    @include text_20_b;
+    @include line-height;
+    color: $black;
+  }
+
+  .lib-bottom-sheet-text {
+    @include text_16_b;
+    @include line-height;
+    color: $black;
+  }
+
+  .lib-bottom-sheet-article {
+    @include text_14_m;
+    @include line-height;
+    color: $gray-1;
+  }
+}

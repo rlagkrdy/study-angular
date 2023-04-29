@@ -1,0 +1,14 @@
+@import "core";
+
+.birth-form-field {
+  @include flex-end();
+}
+
+.year-box {
+  @include flex-width(184px);
+  margin-right: $spacing-l;
+}
+
+.month-box {
+  flex: 1;
+}

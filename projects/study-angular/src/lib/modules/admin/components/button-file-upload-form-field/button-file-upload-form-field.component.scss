@@ -1,0 +1,23 @@
+@import '../../../../../scss/core';
+
+.profile-image-upload-form-field {
+  .upload-button-form-box {
+    @include flex-center;
+
+    mat-spinner {
+      margin-left: 20px;
+    }
+  }
+  .preview-file-name-box {
+    margin-top: 20px;
+    @include flex-center;
+
+    .file-name {
+      margin-right: 20px;
+    }
+  }
+}
+
+.input {
+  display: none;
+}

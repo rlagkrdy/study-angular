@@ -1,0 +1,24 @@
+@import "core";
+
+.holiday-list {
+  @include flex-start();
+  flex-wrap: wrap;
+  margin: -4px;
+
+  .holiday-item {
+    @include flex-center-center();
+    @include text_16_r;
+    color: $gray-2;
+    width: 74px;
+    height: 37px;
+    border-radius: 4px;
+    border: solid 1px $gray-3;
+    background-color: #fff;
+    margin: 4px;
+
+    &.active {
+      border-color: $mint;
+      color: $mint;
+    }
+  }
+}

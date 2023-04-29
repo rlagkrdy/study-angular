@@ -1,0 +1,14 @@
+@import "core";
+
+.input-form-field-box {
+  @include flex-center();
+
+  .form-label {
+    @include flex-width(72px);
+    margin-bottom: 0;
+  }
+
+  .lib-radio-button {
+    @include margin-right-without-last-child($spacing-xxl-2);
+  }
+}

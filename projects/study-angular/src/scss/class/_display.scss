@@ -1,0 +1,11 @@
+.flex-center {
+  @include flex-center();
+}
+
+.flex-center-center {
+  @include flex-center-center();
+}
+
+.flex-center-between {
+  @include flex-center-between();
+}

@@ -1,0 +1,15 @@
+<div class="dialog-image-box">
+  <img class="dialog-image" [src]="src" alt="" />
+
+  <a class="dialog-close" [matDialogClose]="false">
+    <img class="close-icon" libSrc="/assets/icons/close.png" alt="close icon" />
+  </a>
+</div>
+
+<div class="dialog-button-box">
+  <button class="lib-button color-mint" [matDialogClose]="true">
+    이벤트 참여하기
+  </button>
+
+  <a class="dialog-close-link" [matDialogClose]="false">다시 보지 않기</a>
+</div>

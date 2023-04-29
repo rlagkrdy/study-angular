@@ -1,0 +1,25 @@
+@import '../../../../../scss/core';
+
+.profile-image-upload-form-field {
+  .upload-button-form-box {
+    @include flex-center;
+
+    mat-spinner {
+      margin-left: 20px;
+    }
+  }
+  .preview-thumbnail-box {
+    margin-top: 20px;
+    @include flex-end;
+
+    .preview-thumbnail {
+      max-width: 360px;
+      width: 100%;
+      margin-right: 20px;
+    }
+  }
+}
+
+.input {
+  display: none;
+}

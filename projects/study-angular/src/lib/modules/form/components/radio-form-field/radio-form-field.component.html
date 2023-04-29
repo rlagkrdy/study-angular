@@ -1,0 +1,13 @@
+<div class="input-form-field-box">
+  <label class="form-label" *ngIf="label" [for]="labelFor">{{ label }}</label>
+
+  <mat-radio-group class="lib-radio-group" [formControl]="formCtrl">
+    <mat-radio-button
+      class="lib-radio-button"
+      *ngFor="let option of options"
+      [value]="option.value"
+    >
+      {{ option.text }}
+    </mat-radio-button>
+  </mat-radio-group>
+</div>

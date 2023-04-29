@@ -1,0 +1,15 @@
+@import "core";
+
+.header-box {
+  display: flex;
+  justify-content: flex-end;
+
+  img {
+    width: 24px;
+  }
+}
+
+.daum-postcode-box {
+  height: 500px !important;
+  overflow: auto;
+}

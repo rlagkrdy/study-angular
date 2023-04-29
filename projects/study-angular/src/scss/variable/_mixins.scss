@@ -1,0 +1,414 @@
+@mixin at-root($class) {
+  @at-root #{$class}#{&} {
+    @content;
+  }
+}
+
+@mixin at-root-active {
+  @at-root .active#{&} {
+    @content;
+  }
+}
+
+@mixin inline-block() {
+  display: inline-block;
+  vertical-align: top;
+}
+
+// Position
+@mixin margin-center($direction: both) {
+  position: absolute;
+  @if $direction != horizontal {
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  @if $direction != vertical {
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@mixin translate-center($direction: both) {
+  position: absolute;
+  @if $direction != horizontal {
+    top: 50%;
+  }
+  @if $direction != vertical {
+    left: 50%;
+  }
+  @if $direction == horizontal {
+    transform: translateX(-50%);
+  } @else if $direction == vertical {
+    transform: translateY(-50%);
+  } @else {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@mixin inline-center($direction: both) {
+  display: inline-flex;
+  @if $direction != horizontal {
+    align-items: center;
+    vertical-align: middle;
+  }
+  @if $direction != vertical {
+    justify-content: center;
+  }
+}
+
+// Image
+
+@mixin background-cover {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+@mixin background-image-magnification($url) {
+  $twice: str-insert($url, "@2x", -5);
+  background-image: url($url);
+  background-image: image-set(url($url) 1x, url($twice) 2x);
+}
+
+// Margin
+
+@mixin margin-right-without-last-child($margin) {
+  margin-right: $margin;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+@mixin margin-right-without-nth-child($margin, $number) {
+  margin-right: $margin;
+
+  &:nth-child(#{$number}) {
+    margin-right: 0;
+  }
+}
+
+@mixin margin-bottom-without-last-child($margin) {
+  margin-bottom: $margin;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@mixin margin-bottom-without-last-of-type($margin) {
+  margin-bottom: $margin;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+// Border
+
+@mixin border-right-without-last-child($border) {
+  border-right: $border;
+
+  &:last-child {
+    border-right: 0;
+  }
+}
+
+@mixin border-top-without-first-child($border) {
+  border-top: $border;
+
+  &:first-child {
+    border-top: 0;
+  }
+}
+
+@mixin border-bottom-without-first-child($border) {
+  border-bottom: $border;
+
+  &:first-child {
+    border-bottom: 0;
+  }
+}
+
+@mixin border-bottom-without-last-child($border) {
+  border-bottom: $border;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+@mixin box-shadow {
+  box-shadow: 0 2px 13px 0 rgba(0, 55, 122, 0.2);
+}
+
+@mixin list-border($border) {
+  border-top: $border;
+  border-right: $border;
+  border-left: $border;
+
+  &:last-child {
+    border-bottom: $border;
+  }
+}
+
+@mixin pill($height) {
+  height: $height;
+  border-radius: $height / 2;
+  box-sizing: border-box;
+}
+
+// Icon
+
+@mixin icon-size($size) {
+  width: $size;
+  height: $size;
+  font-size: $size;
+}
+
+// Color {
+
+@mixin border-none {
+  border: none;
+  outline: none;
+}
+
+@mixin transparent {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+// White Box
+
+@mixin white-box {
+  display: inline-block;
+  position: relative;
+  padding: 10px 50px 10px 15px;
+  width: 100%;
+  max-width: 325px;
+  height: 50px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+@mixin white-box-small {
+  padding: 5px 40px 5px 10px;
+  height: 40px;
+  font-size: 16px;
+}
+
+@mixin white-box-inner-font {
+  text-align: left;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: -0.8px;
+  vertical-align: top;
+}
+
+@mixin white-box-inner-icon {
+  @include margin-center(vertical);
+  right: 15px;
+  padding: 0;
+  vertical-align: top;
+
+  img {
+    width: 100%;
+    vertical-align: top;
+  }
+}
+
+@mixin white-box-inner-icon-small {
+  right: 12px;
+  width: 16px;
+}
+
+// Ellipsis
+
+@mixin ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white) {
+  overflow: hidden;
+  position: relative;
+  line-height: $lineHeight;
+  max-height: $lineHeight * $lineCount;
+  text-align: justify;
+  margin-right: -1em;
+  padding-right: 1em;
+
+  &:before {
+    content: "...";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    background: $bgColor;
+  }
+}
+
+// Scroll
+
+@mixin scroll-style($width: 5px, $background-color: #666) {
+  &::-webkit-scrollbar-thumb {
+    background-color: $background-color;
+  }
+
+  &::-webkit-scrollbar {
+    width: $width;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $background-color;
+  }
+}
+
+// Responsive
+
+// Flex
+@mixin flex-end($direction: both) {
+  display: flex;
+  align-items: flex-end;
+
+  @if $direction == column {
+    flex-direction: column;
+  }
+}
+@mixin flex-center($direction: both) {
+  display: flex;
+  align-items: center;
+
+  @if $direction == column {
+    flex-direction: column;
+  }
+}
+
+@mixin inline-flex-center-center($direction: both) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  @if $direction == column {
+    flex-direction: column;
+  }
+}
+
+@mixin flex-center-center($direction: both) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @if $direction == column {
+    flex-direction: column;
+  }
+}
+
+@mixin flex-start($direction: both) {
+  display: flex;
+  align-items: flex-start;
+
+  @if $direction == column {
+    flex-direction: column;
+  }
+}
+
+@mixin flex-start-end($direction: both) {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+
+  @if $direction == column {
+    flex-direction: column;
+  }
+}
+
+@mixin flex-start-center($direction: both) {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  @if $direction == column {
+    flex-direction: column;
+  }
+}
+
+@mixin flex-start-between($direction: both) {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  @if $direction == column {
+    flex-direction: column;
+  }
+}
+
+@mixin flex-center-end($direction: both) {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  @if $direction == column {
+    flex-direction: column;
+  }
+}
+
+@mixin flex-center-between($direction: both) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @if $direction == column {
+    flex-direction: column;
+  }
+}
+
+@mixin flex-center-around($direction: both) {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  @if $direction == column {
+    flex-direction: column;
+  }
+}
+
+@mixin flex-end-between($direction: both) {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  @if $direction == column {
+    flex-direction: column;
+  }
+}
+
+@mixin flex-end-center($direction: both) {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  @if $direction == column {
+    flex-direction: column;
+  }
+}
+
+@mixin flex-width($width) {
+  flex: 0 0 $width;
+  width: $width;
+}

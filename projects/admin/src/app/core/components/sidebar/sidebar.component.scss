@@ -1,0 +1,82 @@
+@import "core";
+
+:host-context(.nav__text_hide) {
+  .nav-link {
+    .nav-text {
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }
+  }
+}
+
+.nav-link {
+  @include inline-center(vertical);
+  position: relative;
+  padding: 24px 34px;
+  width: 100%;
+  text-decoration: none;
+  font-size: 18px;
+  color: #a8a9b9;
+
+  &.active {
+    background-color: $color-primary;
+    color: $white;
+
+    &::before {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 12px;
+      left: 0;
+      width: 4px;
+      height: 32px;
+      background-color: $color-primary-light;
+    }
+  }
+
+  .icon {
+    width: 48px;
+    height: 48px;
+    font-size: 48px;
+    margin-right: 10px;
+  }
+
+  .nav-text {
+    width: 112px;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: width 250ms ease-in-out;
+  }
+
+  .arrow-icon {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    transition: transform 200ms;
+  }
+
+  &.expanded {
+    .arrow-icon {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.nav-list-level-2 {
+  height: 0;
+  overflow-y: hidden;
+  transition: height 200ms;
+}
+
+.nav-link-level-2 {
+  display: block;
+  padding: 16px 16px 16px 32px;
+  color: $color-black;
+  font-size: 14px;
+
+  &.active {
+    background-color: $color-primary-light;
+    color: $color-white;
+  }
+}

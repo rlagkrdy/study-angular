@@ -1,0 +1,53 @@
+@import "core";
+
+.thumbnail-section {
+  @include flex-center-center();
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+
+  .thumbnail-header {
+    @include flex-center-between();
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: $spacing-xxl-3 $spacing-l;
+  }
+
+  .thumbnail-close {
+    z-index: 99;
+  }
+
+  .slider-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .thumbnail-image {
+    width: 100%;
+  }
+
+  .move-button {
+    @include translate-center(vertical);
+    display: block;
+    width: 36px;
+    height: 36px;
+    z-index: 1;
+
+    &.left-button {
+      left: 0;
+      transform: rotate(180deg) translateY(50%);
+    }
+
+    &.right-button {
+      right: 0;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}

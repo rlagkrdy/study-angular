@@ -1,0 +1,22 @@
+@import "core";
+
+.lib-input {
+  margin-bottom: $spacing-l;
+}
+
+.certification-number-box {
+  position: relative;
+  margin-top: 6px;
+
+  .lib-input {
+    padding-right: 80px;
+  }
+
+  .certification-count {
+    @include text_16_m;
+    color: $mint;
+    position: absolute;
+    top: 20px;
+    right: 16px;
+  }
+}

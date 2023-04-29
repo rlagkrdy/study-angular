@@ -1,0 +1,12 @@
+@import "core";
+
+.policy-content-box {
+  overflow: scroll;
+  padding: $spacing-l;
+  height: calc(100% - 67px);
+}
+.policy-content-article {
+  @include text_20_r;
+  @include line-height;
+  white-space: pre-line;
+}

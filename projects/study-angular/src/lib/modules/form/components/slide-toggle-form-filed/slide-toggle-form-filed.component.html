@@ -1,0 +1,11 @@
+<div class="input-form-field-box">
+  <label *ngIf="label" class="form-label" [for]="labelFor">{{ label }}</label>
+
+  <mat-slide-toggle
+    #slide
+    class="nik-slide-toggle"
+    [id]="labelFor"
+    [formControl]="formCtrl"
+    >{{ slide.checked ? onText : offText }}
+  </mat-slide-toggle>
+</div>

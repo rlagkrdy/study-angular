@@ -1,0 +1,108 @@
+<form [formGroup]="formGroup">
+  <div *ngFor="let adminFormControl of adminFormControls" class="form-control">
+    <label class="admin-label" [for]="adminFormControl.formControlName">{{
+      adminFormControl.label
+    }}</label>
+
+    <div *ngIf="adminFormControl.type === controlType.INPUT" class="form-control-item">
+      <mat-form-field appearance="outline">
+        <input
+          matInput
+          type="text"
+          [id]="adminFormControl.formControlName"
+          [formControlName]="adminFormControl.formControlName"
+          [placeholder]="adminFormControl.placeholder"
+        />
+      </mat-form-field>
+    </div>
+
+    <div *ngIf="adminFormControl.type === controlType.NUMBER" class="form-control-item">
+      <mat-form-field appearance="outline">
+        <input
+          matInput
+          type="number"
+          [id]="adminFormControl.formControlName"
+          [formControlName]="adminFormControl.formControlName"
+          [placeholder]="adminFormControl.placeholder"
+        />
+      </mat-form-field>
+    </div>
+
+    <div *ngIf="adminFormControl.type === controlType.DATE" class="form-control-item">
+      <mat-form-field appearance="outline">
+        <input
+          matInput
+          [id]="adminFormControl.formControlName"
+          [formControlName]="adminFormControl.formControlName"
+          [placeholder]="adminFormControl.placeholder"
+          [matDatepicker]="datepicker"
+          (click)="datepicker.open()"
+        />
+
+        <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+
+        <mat-datepicker #datepicker> </mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div *ngIf="adminFormControl.type === controlType.IMAGE" class="form-control-item">
+      <lib-admin-button-image-upload-form-field
+        [dirPath]="adminFormControl.dirPath"
+        [formControlName]="adminFormControl.formControlName"
+      ></lib-admin-button-image-upload-form-field>
+    </div>
+
+    <div *ngIf="adminFormControl.type === controlType.FILE" class="form-control-item">
+      <lib-admin-file-upload-form-field
+        [dirPath]="adminFormControl.dirPath"
+        [formControlName]="adminFormControl.formControlName"
+      ></lib-admin-file-upload-form-field>
+    </div>
+
+    <div *ngIf="adminFormControl.type === controlType.VIDEO" class="form-control-item">
+      <lib-admin-file-upload-form-field
+        [dirPath]="adminFormControl.dirPath"
+        [formControlName]="adminFormControl.formControlName"
+        accept="video/mp4"
+      ></lib-admin-file-upload-form-field>
+    </div>
+
+    <div *ngIf="adminFormControl.type === controlType.CHECKBOX" class="form-control-item">
+      <mat-checkbox
+        [id]="adminFormControl.formControlName"
+        [formControlName]="adminFormControl.formControlName"
+      >
+        {{ adminFormControl.placeholder }}
+      </mat-checkbox>
+    </div>
+
+    <div *ngIf="adminFormControl.type === controlType.EDITOR" class="form-control-item">
+      <lib-admin-editor-form-field
+        [dirPath]="adminFormControl.dirPath"
+        [formControlName]="adminFormControl.formControlName"
+      ></lib-admin-editor-form-field>
+    </div>
+
+    <div *ngIf="adminFormControl.type === controlType.SELECTBOX" class="form-control-item">
+      <mat-form-field appearance="outline">
+        <mat-label> 선택 </mat-label>
+        <mat-select [formControlName]="adminFormControl.formControlName">
+          <mat-option *ngFor="let option of adminFormControl.options" [value]="option.value">{{
+            option.text
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div *ngIf="adminFormControl.type === controlType.RADIOBOX" class="form-control-item">
+      <mat-radio-group
+        [formControlName]="adminFormControl.formControlName"
+        aria-label="Select an option"
+      >
+        <mat-radio-button *ngFor="let option of adminFormControl.options" [value]="option.value">{{
+          option.text
+        }}</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </div>
+</form>

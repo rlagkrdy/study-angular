@@ -1,0 +1,30 @@
+@import 'variable';
+
+.contact-button-box {
+  position: fixed;
+  right: 40px;
+  bottom: 52px;
+  z-index: 1000;
+
+  @include xs {
+    right: 24px;
+  }
+
+  .contact-link {
+    @include flex-center-center;
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: $blue;
+
+    @include xs {
+      width: 54px;
+      height: 54px;
+    }
+
+    .message-contact-icon {
+      width: 32px;
+    }
+  }
+}

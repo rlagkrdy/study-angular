@@ -1,0 +1,116 @@
+@import 'variable';
+
+.footer-box {
+  background-color: #efefef;
+  width: 100%;
+
+  .inner-box {
+    @include flex-start;
+    max-width: 1280px;
+    width: 100%;
+    padding: 64px 148px 62px;
+    margin: 0 auto;
+
+    @include lt-lg {
+      padding: $spacing-xxl-6 $spacing-xxl-2;
+    }
+
+    @include lt-md {
+      flex-direction: column;
+    }
+
+    @include xs {
+      padding: $spacing-xxl-2 $spacing-m $spacing-xl;
+    }
+  }
+}
+
+.left-box {
+  margin-right: 78px;
+
+  @include lt-md {
+    margin-bottom: $spacing-xl;
+  }
+
+  .footer-logo-link {
+    display: block;
+
+    .footer-logo {
+      width: 122px;
+
+      @include xs {
+        width: 85px;
+      }
+    }
+  }
+}
+
+.right-box {
+  .footer-info-list {
+    margin-bottom: $spacing-xxl;
+
+    .footer-info-item {
+      @include flex-center;
+      @include margin-bottom-without-last-child($spacing-m);
+
+      @include xs {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .footer-info {
+        @include margin-right-without-last-child($spacing-xxl-2);
+        @include text_16_r;
+
+        @include xs {
+          @include margin-bottom-without-last-child($spacing-xs);
+        }
+
+        &.address {
+          @include xs {
+            font-size: 14px;
+          }
+        }
+
+        .address-divider {
+          @include xs {
+            display: block;
+            height: 4px;
+            visibility: hidden;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-sub-info-list {
+    @include flex-center;
+
+    @include xs {
+      align-items: flex-start;
+      flex-direction: column-reverse;
+    }
+
+    .footer-sub-info-item {
+      @include flex-center;
+      @include margin-right-without-last-child($spacing-xl);
+
+      @include xs {
+        display: block;
+        &:last-child {
+          margin-bottom: $spacing-m;
+        }
+      }
+
+      .footer-sub-info {
+        @include text_16_b;
+        @include margin-right-without-last-child($spacing-xxl-2);
+
+        @include xs {
+          @include inline-block;
+          @include margin-right-without-last-child($spacing-xl);
+        }
+      }
+    }
+  }
+}

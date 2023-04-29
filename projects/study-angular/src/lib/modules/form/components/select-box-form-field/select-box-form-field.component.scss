@@ -1,0 +1,13 @@
+@import "core";
+
+.lib-input {
+  background: url("/assets/icons/more-expansion@2x.png") no-repeat 95% 50%;
+  background-size: 26px 26px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  &[data-empty="true"] {
+    color: $gray-2;
+  }
+}

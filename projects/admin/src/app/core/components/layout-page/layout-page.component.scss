@@ -1,0 +1,70 @@
+@import "core";
+
+$toolbar-height: 118px;
+
+.dn-admin-toolbar {
+  position: fixed;
+  padding: $spacing-xxl 34px;
+  background-color: white;
+  border-bottom: 2px solid #e8e9ec;
+  z-index: 10;
+  height: auto;
+
+  .toolbar-header-box {
+    @include flex-center-between();
+    width: 100%;
+
+    .left-box {
+      flex: auto;
+      @include flex-center;
+      .icon-button {
+        width: 48px;
+        height: 48px;
+        background: #e14886;
+        margin-right: 64px;
+      }
+
+      .toolbar-logo {
+        width: 40px;
+        height: 40px;
+        margin-right: 52px;
+      }
+
+      .form-control {
+        max-width: 800px;
+        width: 100%;
+      }
+    }
+
+    .right-box {
+      @include flex-center-between();
+
+      .dn-admin-button {
+        @include margin-right-without-last-child($spacing-xxl-2);
+        width: 56px;
+        height: 56px;
+        border-radius: 28px;
+        border: solid 2px #ebedfa;
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+.sidenav-container {
+  padding-top: $toolbar-height;
+  height: 100%;
+}
+
+.sidenav {
+
+  padding-top: $toolbar-height;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.div-contents-box {
+  padding: 40px;
+}

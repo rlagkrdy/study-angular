@@ -1,0 +1,48 @@
+@import "core";
+
+:host-context(.check-all) {
+  .input-form-field-box {
+    padding: $spacing-l;
+    border-radius: 10px;
+    border: solid 1px $gray-3;
+
+    .checkbox-icon {
+      mask-image: url("/assets/icons/checkbox.svg");
+    }
+
+    .form-label {
+      @include text_20_r;
+      color: $gray-2;
+    }
+  }
+}
+
+.input-form-field-box {
+  @include flex-center;
+
+  .lib-input[type="checkbox"]:checked {
+    + .checkbox-icon {
+      background-color: $mint;
+    }
+    ~ .form-label {
+      color: $mint;
+    }
+  }
+  .lib-input {
+    display: none;
+  }
+
+  .checkbox-icon {
+    width: 24px;
+    height: 24px;
+    mask-image: url("/assets/icons/checkbox-2.svg");
+    margin-bottom: 0;
+    margin-right: $spacing-xs;
+  }
+
+  .form-label {
+    @include text_16_r;
+    color: $gray-2;
+    margin-bottom: 0;
+  }
+}

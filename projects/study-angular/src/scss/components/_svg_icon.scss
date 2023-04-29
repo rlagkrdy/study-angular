@@ -1,0 +1,32 @@
+.svg-icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  mask-size: cover;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-color: $gray-2;
+  /*margin-bottom: 4px;*/
+}
+
+.home-icon {
+  mask-image: url("/assets/icons/castle.svg");
+}
+
+.pet-friends-icon {
+  mask-image: url("/assets/icons/pet-friends.svg");
+}
+
+.map-icon {
+  mask-image: url("/assets/icons/map.svg");
+}
+
+.event-icon {
+  mask-image: url("/assets/icons/event.svg");
+}
+
+.my-card-icon {
+  mask-image: url("/assets/icons/my-card.svg");
+}

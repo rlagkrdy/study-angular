@@ -1,0 +1,59 @@
+@import "components/button";
+@import "components/swiper";
+@import "components/input";
+@import "components/slide-toggle";
+@import "components/svg_icon";
+@import "components/bottom_sheet";
+
+.mat-expansion-panel {
+  &:not([class*="mat-elevation-z"]) {
+    box-shadow: none;
+  }
+
+  &.mat-expanded {
+    @include default-border-bottom;
+    .mat-expansion-panel-header:after {
+      transform: rotate(180deg);
+    }
+  }
+
+  .mat-expansion-panel-header {
+    position: relative;
+    padding: 20px 16px;
+    height: 55px;
+    @include default-border-bottom;
+
+    &:after {
+      @include background-image-magnification(
+        "/assets/icons/more-expansion.png"
+      );
+      content: "";
+      width: 26px;
+      height: 26px;
+      transition: transform 150ms ease-in-out;
+      transform: rotate(0deg);
+    }
+  }
+
+  .mat-expansion-panel-body {
+    padding: 20px 16px;
+  }
+}
+
+.faq-expansion-panel {
+  .mat-expansion-panel-header {
+    padding: $spacing-xl;
+    @include default-border-bottom;
+  }
+}
+
+.event-list {
+  @include flex-center();
+  flex-wrap: wrap;
+  margin: 0 -4px $spacing-xxl-2;
+
+  li {
+    @include flex-width(calc(50% - 8px));
+    margin: 4px;
+  }
+}

@@ -1,0 +1,59 @@
+<div class="input-form-field-box">
+  <label class="form-label" *ngIf="label" [for]="labelFor">{{ label }}</label>
+
+  <input
+    class="lib-input"
+    [id]="labelFor"
+    [type]="type"
+    [placeholder]="placeholder"
+    [formControl]="formCtrl"
+    [autocomplete]="labelFor + '-new'"
+    [name]="labelFor + '-new'"
+  />
+
+  <a class="delete-link" (click)="reset()">
+    <img
+      class="input-delete-icon"
+      libSrc="/assets/icons/delete.png"
+      alt="delete icon"
+    />
+  </a>
+</div>
+
+<div
+  *ngIf="isShowKeywordList"
+  class="keyword-search-box"
+  [class.show]="hasValue"
+>
+  <ul class="keyword-search-list">
+    <ng-container *ngIf="!isLoading">
+      <li *ngFor="let keyword of keywordResult" class="keyword-search-item">
+        <a (click)="addTag.emit(keyword.value)">{{ keyword.value }}</a>
+      </li>
+
+      <li *ngIf="keywordResult.length === 0" class="keyword-search-empty-item">
+        <p class="text_16_r mb-xxl">검색결과가 없습니다</p>
+
+        <div *ngIf="useAddKeyword" class="add-keyword-box">
+          <div class="left-box">
+            <p class="text_20_b mb-xs">#{{ keywordValue }}</p>
+
+            <p class="text_16_m gray-1">으로 관심 키워드 추가할까요?</p>
+          </div>
+
+          <a
+            class="text_20_r underline mint"
+            (click)="addKeyword.emit('#' + keywordValue)"
+            >키워드 추가</a
+          >
+        </div>
+      </li>
+    </ng-container>
+
+    <ng-container *ngIf="isLoading">
+      <div class="loading-box">
+        <mat-spinner></mat-spinner>
+      </div>
+    </ng-container>
+  </ul>
+</div>

@@ -1,0 +1,19 @@
+<div class="input-form-field-box">
+  <label
+    *ngIf="label"
+    class="form-label"
+    [class.required]="required"
+    [for]="labelFor"
+    >{{ label }}</label
+  >
+
+  <select
+    class="lib-input"
+    [id]="labelFor"
+    [name]="labelFor"
+    [formControl]="formCtrl"
+    [attr.data-empty]="formCtrl.value === ''"
+  >
+    <ng-content></ng-content>
+  </select>
+</div>

@@ -1,0 +1,57 @@
+<section class="login-section">
+  <mat-card class="login-card">
+    <mat-card-header>
+      <h1 class="mat-headline-1">Login</h1>
+
+      <p class="mat-subtitle-1">Hello! Log with your email</p>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form
+        autocomplete="off"
+        [formGroup]="loginForm"
+        (ngSubmit)="login()"
+        class="login-form"
+      >
+        <div class="form-box">
+          <div class="form-control">
+            <label for="email">이메일</label>
+
+            <input
+              id="email"
+              class="dn-admin-input"
+              type="email"
+              formControlName="email"
+              placeholder="아이디"
+            />
+          </div>
+
+          <div class="form-control">
+            <label for="email">이메일을 입력해주세요</label>
+
+            <input
+              id="password"
+              class="dn-admin-input"
+              type="password"
+              formControlName="password"
+              placeholder="비밀번호를 입력해주세요"
+            />
+          </div>
+        </div>
+
+        <div class="button-box">
+          <button
+            matRipple
+            class="dn-admin-button purple-button"
+            [disabled]="loginForm.invalid || isLoading"
+            type="submit"
+          >
+            로그인
+          </button>
+
+          <a class="dn-admin-link" routerLink="">비밀번호 재설정</a>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</section>

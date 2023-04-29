@@ -1,0 +1,41 @@
+<form [formGroup]="formGroup">
+  <div class="input-form-field-box">
+    <label *ngIf="label" class="form-label" for="postcode-button">{{
+      label
+    }}</label>
+
+    <div class="postcode-input-box">
+      <input
+        type="text"
+        class="lib-input"
+        id="postcode"
+        formControlName="postcode"
+        placeholder="우편번호"
+      />
+
+      <button
+        *ngIf="!isDisabled"
+        id="postcode-button"
+        class="postcode-button"
+        type="button"
+        (click)="openPostcode()"
+      >
+        주소찾기
+      </button>
+    </div>
+
+    <input
+      type="text"
+      class="lib-input"
+      formControlName="address"
+      placeholder="주소"
+    />
+
+    <input
+      type="text"
+      class="lib-input"
+      formControlName="addressDetail"
+      placeholder="상세주소"
+    />
+  </div>
+</form>

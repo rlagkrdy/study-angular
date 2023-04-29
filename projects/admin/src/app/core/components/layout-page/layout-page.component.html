@@ -1,0 +1,46 @@
+<mat-toolbar class="dn-admin-toolbar">
+  <div class="toolbar-header-box">
+    <div class="left-box">
+      <button
+        type="button"
+        class="icon-button"
+        (click)="toggleIconNav()"
+      ></button>
+
+      <img class="toolbar-logo" src="" alt="lg" />
+
+
+    </div>
+
+    <div class="right-box">
+      <button type="button" class="dn-admin-button round-button">+</button>
+      <button
+        type="button"
+        class="dn-admin-button round-button"
+        (click)="logout()"
+      >
+        해은
+      </button>
+    </div>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    class="sidenav"
+    fixedInViewport
+    [mode]="'side'"
+    [opened]="true"
+    [attr.role]="'navigation'"
+  >
+    <mat-nav-list>
+      <app-sidebar [class.nav__text_hide]="isIconNav"></app-sidebar>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="div-contents-box">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

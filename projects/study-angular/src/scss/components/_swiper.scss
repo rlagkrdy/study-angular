@@ -1,0 +1,46 @@
+.auto-slider {
+  .swiper-slide {
+    width: auto !important;
+  }
+}
+
+.flex-center-slider {
+  .swiper-wrapper {
+    align-items: center;
+  }
+}
+
+.pagination-box {
+  @include flex-center-center();
+  width: 100%;
+}
+
+.pagination-list {
+  @include flex-center-center();
+
+  .pagination-item {
+    @include flex-center-center();
+    margin-right: $spacing-xs;
+    cursor: pointer;
+
+    &.active {
+      .pagination-dot {
+        //width: 24px;
+        background-color: $mint;
+      }
+    }
+  }
+
+  .pagination-dot {
+    transition: width 150ms ease-in;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: $gray-2;
+  }
+
+  .pause-icon {
+    width: 24px;
+    height: 24px;
+  }
+}

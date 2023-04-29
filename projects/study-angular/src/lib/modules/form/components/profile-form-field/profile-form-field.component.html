@@ -1,0 +1,16 @@
+<div class="profile-image-upload-form-field">
+  <div class="profile-form-box" (click)="fileInput.click()">
+    <lib-profile-image
+      [isUpload]="true"
+      [url]="url"
+      [isLoading]="isUploading"
+    ></lib-profile-image>
+  </div>
+
+  <input
+    #fileInput
+    class="input"
+    (change)="upload($event.target)"
+    type="file"
+  />
+</div>

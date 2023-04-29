@@ -1,0 +1,395 @@
+@import 'variable';
+
+.toolbar-box {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: $white;
+  transition: background-color 200ms ease-in-out;
+
+  &.toolbar__transparent {
+    background-color: transparent;
+
+    .toolbar-list {
+      .toolbar-item {
+        .toolbar-link {
+          color: $white;
+        }
+      }
+    }
+
+    .toolbar-inner-box {
+      .left-box {
+        .toolbar-logo-link {
+          .toolbar-logo {
+            transform: translate3d(0, -100%, 0);
+          }
+        }
+      }
+      .right-box {
+        .language-list {
+          .language-item {
+            color: $white;
+
+            &.divider {
+              margin: 0 8px;
+              color: $white;
+            }
+          }
+        }
+
+        .toolbar-menu-link {
+          .toolbar-menu-icon {
+            background-color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.toolbar-list {
+  @include flex-center;
+
+  .toolbar-item {
+    @include margin-right-without-last-child($spacing-xxl-2);
+
+    .toolbar-link {
+      @include text_16_m;
+      display: block;
+      position: relative;
+
+      &.active {
+        font-weight: bold;
+        &:after {
+          @include translate-center(horizontal);
+          content: '';
+          width: 40px;
+          height: 4px;
+          bottom: -29px;
+          background: $blue;
+        }
+      }
+    }
+  }
+}
+
+.toolbar-inner-box {
+  @include flex-center-between;
+  border-bottom: 1px solid $gray-2;
+  padding: $spacing-m $spacing-xxl-3;
+
+  @include md {
+    padding: 18px $spacing-xxl-2;
+  }
+
+  @include sm {
+    padding: 18px $spacing-xl;
+  }
+
+  @include xs {
+    padding: 10px $spacing-m;
+  }
+
+  .left-box {
+    @include flex-center;
+
+    .toolbar-logo-link {
+      @include flex-center(column);
+      margin-right: $spacing-xl;
+      width: 129px;
+      height: 40px;
+      overflow: hidden;
+
+      @include md {
+        width: 113px;
+        height: 35px;
+      }
+
+      @include sm {
+        width: 113px;
+        height: 35px;
+      }
+
+      @include xs {
+        width: 90px;
+        height: 24px;
+      }
+
+      .toolbar-logo {
+        width: inherit;
+        transition: transform 200ms ease-in-out;
+      }
+    }
+
+    .toolbar-list {
+      @include lt-lg {
+        display: none;
+      }
+    }
+  }
+
+  .right-box {
+    @include flex-center;
+
+    .toolbar-nav {
+      margin-right: $spacing-xxl-6;
+    }
+
+    .language-list {
+      @include flex-center;
+
+      .language-item {
+        @include text_16_r;
+
+        &.divider {
+          margin: 0 8px;
+        }
+
+        .language-link {
+          &.active {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .toolbar-menu-link {
+      display: none;
+      width: 34px;
+      height: 34px;
+
+      .toolbar-menu-icon {
+        width: 34px;
+        height: 34px;
+        mask-image: url('/assets/icons/toolbar-menu-icon.png');
+        background-color: $black;
+      }
+    }
+
+    @include lt-lg {
+      .toolbar-nav,
+      .language-list {
+        display: none;
+      }
+
+      .toolbar-menu-link {
+        display: block;
+      }
+    }
+  }
+}
+
+.bottom-menu-box {
+  background-color: #fafafa;
+  height: 0;
+  overflow: hidden;
+  transition: height 200ms ease-in-out;
+
+  &.bottom-menu-box__open {
+    height: 144px;
+  }
+
+  @include lt-lg {
+    display: none;
+  }
+
+  .bottom-menu-inner-box {
+    @include flex-center-end;
+    padding: 24px 570px 24px 24px;
+  }
+
+  .bottom-menu-list {
+    @include margin-right-without-last-child(42px);
+
+    .bottom-menu-item {
+      @include text_16_b;
+      @include margin-bottom-without-last-child($spacing-xl);
+      text-align: center;
+      color: $blue;
+    }
+  }
+}
+
+.toolbar-mobile-menu-box {
+  @include flex-start-end;
+  position: fixed;
+  width: 0;
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  overflow: hidden;
+
+  @include lg {
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  &.menu__open {
+    width: 100vw;
+    height: 100vh;
+    z-index: 1001;
+
+    .toolbar-mobile-inner-box {
+      transform: translate(0, 0);
+    }
+  }
+
+  .toolbar-mobile-inner-box {
+    @include flex-start-between(column);
+    width: 385px;
+    background-color: $white;
+    height: 100%;
+    transform: translate3d(100%, 0, 0);
+    transition: transform 250ms ease-in-out;
+
+    @include xs {
+      width: 339px;
+    }
+  }
+
+  .top-box {
+    width: 100%;
+
+    .toolbar-mobile-menu-header-box {
+      @include flex-center-between;
+      padding: 18px $spacing-xxl-2;
+      border-bottom: 1px solid $gray-2;
+      width: 100%;
+
+      @include xs {
+        padding: 11px $spacing-m;
+      }
+
+      .toolbar-logo-link {
+        display: block;
+        width: 129px;
+
+        @include xs {
+          width: 77px;
+        }
+
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+
+      .toolbar-close-link {
+        width: 34px;
+
+        img {
+          width: 100%;
+          pointer-events: none;
+        }
+      }
+    }
+
+    .nav-toolbar-mobile-nav {
+      height: calc(100vh - 150.5px);
+      overflow: auto;
+
+      @include xs {
+        height: calc(100vh - 128.5px);
+      }
+
+      .toolbar-mobile-nav-list {
+        .toolbar-mobile-nav-item {
+          &.active {
+            .toolbar-mobile-nav-link {
+              text-decoration: underline;
+
+              .sub-menu-close-icon {
+                display: block;
+              }
+
+              .sub-menu-open-icon {
+                display: none;
+              }
+            }
+
+            .toolbar-mobile-child-menu-list {
+              height: 144px;
+            }
+          }
+
+          .toolbar-mobile-nav-link {
+            @include flex-center-between;
+            @include text_20_b;
+            padding: $spacing-xl $spacing-xxl-2;
+
+            @include xs {
+              padding: $spacing-xl $spacing-m;
+            }
+
+            &.active {
+              text-decoration: underline;
+            }
+
+            .sub-menu-icon {
+              display: none;
+              width: 24px;
+            }
+
+            .sub-menu-open-icon {
+              display: block;
+            }
+          }
+
+          .toolbar-mobile-child-menu-list {
+            height: 0;
+            transition: height 200ms ease-in-out;
+            overflow: hidden;
+            .toolbar-mobile-child-menu-item {
+              .toolbar-mobile-child-menu-link {
+                display: block;
+                @include text_16_m;
+                padding: $spacing-m $spacing-xxl-5;
+
+                @include xs {
+                  padding: $spacing-m $spacing-xxl;
+                }
+
+                &.active {
+                  font-weight: bold;
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bottom-box {
+    width: 100%;
+    padding: $spacing-xl $spacing-xxl-2 $spacing-xxl;
+    border-top: 1px solid $gray-2;
+
+    @include xs {
+      padding: $spacing-xl $spacing-m;
+    }
+
+    .language-list {
+      @include flex-center;
+
+      .language-item {
+        @include text_20_r;
+
+        a {
+          &.active {
+            font-weight: bold;
+          }
+        }
+
+        &.divider {
+          margin: 0 $spacing-xl;
+        }
+      }
+    }
+  }
+}

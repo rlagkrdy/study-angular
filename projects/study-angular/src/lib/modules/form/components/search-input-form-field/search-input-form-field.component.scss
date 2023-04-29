@@ -1,0 +1,62 @@
+@import "core";
+
+.input-form-field-box {
+  position: relative;
+
+  .lib-input {
+    padding-right: $spacing-xxl-4;
+
+    &:not(:placeholder-shown) {
+      + .delete-link {
+        display: block;
+      }
+    }
+  }
+
+  .delete-link {
+    position: absolute;
+    top: 17px;
+    right: 16px;
+    display: none;
+  }
+}
+
+.keyword-search-box {
+  display: none;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  background: $gray-4;
+  height: calc(100% - 137px);
+
+  &.show {
+    display: block;
+  }
+
+  .keyword-search-list {
+    padding-top: 24px;
+    background-color: $white;
+    .keyword-search-item {
+      a {
+        @include text_16_m;
+        display: block;
+        padding: $spacing-xxl $spacing-l;
+        @include default-border-bottom;
+      }
+    }
+
+    .keyword-search-empty-item {
+      padding: 0 $spacing-l $spacing-xxl-2;
+
+      .add-keyword-box {
+        @include flex-center-between();
+      }
+    }
+  }
+}
+
+.loading-box {
+  @include flex-center-center();
+  padding-bottom: $spacing-xxl-2;
+}

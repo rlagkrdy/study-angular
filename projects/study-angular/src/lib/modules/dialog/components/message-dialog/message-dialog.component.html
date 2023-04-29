@@ -1,0 +1,22 @@
+<div class="layer_popup" id="waiting_popup">
+  <div class="popup">
+    <a *ngIf="!closeDisabled" class="btn_close" [matDialogClose]="true"
+      >&times;</a
+    >
+    <h5 class="popup_header">{{ title }}</h5>
+
+    <div class="popup_content" [innerHTML]="message"></div>
+
+    <div *ngIf="confirmButtonText || cancelButtonText" class="popup_footer">
+      <a *ngIf="confirmButtonText" class="btn_ty02" (click)="close(true)"
+        >Confirm</a
+      >
+      <a
+        *ngIf="cancelButtonText"
+        class="btn_ty02 lightgray"
+        (click)="close(false)"
+        >Cancel</a
+      >
+    </div>
+  </div>
+</div>

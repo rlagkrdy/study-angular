@@ -1,0 +1,71 @@
+.lib-button {
+  @include text_20_r;
+  width: 100%;
+  padding: 16px;
+  border-radius: 10px;
+  background-color: $white;
+  @include default-border;
+  color: $black;
+
+  &.border-none {
+    border: none;
+
+    &:disabled {
+      border: none;
+    }
+  }
+
+  &.size-md {
+    @include size-md-font;
+    padding: 12px;
+    border-radius: 22px;
+  }
+
+  &.size-sm {
+    @include size-sm-font;
+    padding: 9px 16px;
+    border-radius: 4px;
+  }
+
+  &.size-xs {
+    @include size-xs-font;
+    padding: 4px 8px;
+    border-radius: 11px;
+  }
+
+  &.width-120 {
+    width: 120px;
+  }
+
+  &.width-auto {
+    width: auto;
+  }
+
+  &.color-mint {
+    background-color: $mint;
+    border-color: $mint;
+    color: $white;
+  }
+
+  &.color-gray-1 {
+    background-color: $gray-1;
+    border: solid 2px $gray-1;
+  }
+
+  &.color-black {
+    background-color: $black;
+    border: solid 2px $black;
+  }
+
+  &.color-white {
+    background-color: $white;
+    border: solid 2px $gray-2;
+    color: $black;
+  }
+
+  &:disabled {
+    @include default-border;
+    background-color: $gray-2;
+    color: $gray-2;
+  }
+}
