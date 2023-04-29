@@ -8,7 +8,7 @@ import {
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { first, map, tap } from 'rxjs/operators';
-import { NgAuthService } from '../../../../../dn-accountant/src/lib/db/auth/auth.service';
+import { NgAuthService } from '../../../../../study-angular/src/lib/db/auth/auth.service';
 
 @Injectable({
   providedIn: 'root',

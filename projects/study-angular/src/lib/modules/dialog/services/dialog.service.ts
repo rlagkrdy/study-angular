@@ -11,8 +11,6 @@ import { DmDialogMessageOptions, DmDialogComponentOptions } from '../types';
 import { DaumPostcodeDialogComponent } from '../components/daum-postcode-dialog/daum-postcode-dialog.component';
 import { PostcodeData } from '../../postcode/services/postcode.service';
 import { ImageDialogComponent } from '../components/image-dialog/image-dialog.component';
-import {ThumbnailDialogComponent} from "../components/thumbnail-dialog/thumbnail-dialog.component";
-import {Album} from "../../../../../../../src/entities/album/types";
 
 @Injectable()
 export class NgDialogService {
@@ -59,14 +57,6 @@ export class NgDialogService {
       data: {
         src,
       },
-      autoFocus: true,
-    });
-  }
-
-  openThumbnail(data: any): MatDialogRef<ThumbnailDialogComponent> {
-    return this.dialog.open(ThumbnailDialogComponent, {
-      panelClass: 'pet-thumbnail-dialog-panel',
-      data,
       autoFocus: true,
     });
   }

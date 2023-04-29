@@ -16,7 +16,6 @@ import SwiperCore, {
   Zoom,
   Navigation,
 } from 'swiper';
-import { SwiperComponent } from 'swiper/angular';
 import { ContentChildDirective } from '../directives/content-child.directive';
 SwiperCore.use([Zoom, Pagination, Autoplay, Navigation]);
 
@@ -26,7 +25,7 @@ SwiperCore.use([Zoom, Pagination, Autoplay, Navigation]);
   styleUrls: ['./custom-slider.component.scss'],
 })
 export class CustomSliderComponent implements AfterViewInit {
-  @ViewChild('swiper', { static: false }) swiper: SwiperComponent;
+  // @ViewChild('swiper', { static: false }) swiper: SwiperComponent;
   @ContentChildren(ContentChildDirective, { descendants: true })
   slidesEl: QueryList<ContentChildDirective> | undefined;
 
@@ -40,9 +39,9 @@ export class CustomSliderComponent implements AfterViewInit {
   ngAfterViewInit() {}
 
   slideNext() {
-    this.swiper.swiperRef.slideNext();
+    // this.swiper.swiperRef.slideNext();
   }
   slidePrev() {
-    this.swiper.swiperRef.slidePrev();
+    // this.swiper.swiperRef.slidePrev();
   }
 }

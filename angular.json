@@ -3,18 +3,18 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "<%= projectName %>": {
+    "study-angular": {
       "projectType": "library",
-      "root": "projects/<%= projectName %>",
-      "sourceRoot": "projects/<%= projectName %>t/src",
+      "root": "projects/study-angular",
+      "sourceRoot": "projects/study-angulart/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/<%= projectName %>/ng-package.json",
+            "project": "projects/study-angular/ng-package.json",
             "stylePreprocessorOptions": {
-              "includePaths": ["projects/<%= projectName %>/src/scss"]
+              "includePaths": ["projects/study-angular/src/scss"]
             }
           },
           "defaultConfiguration": "production"
@@ -74,7 +74,7 @@
             "scripts": [],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "projects/<%= projectName %>/src/scss",
+                "projects/study-angular/src/scss",
                 "projects/web/src/scss"
               ]
             }
@@ -268,7 +268,7 @@
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "projects/<%= projectName %>/src/scss",
+                "projects/study-angular/src/scss",
                 "projects/admin/src/scss"
               ]
             }
@@ -380,5 +380,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

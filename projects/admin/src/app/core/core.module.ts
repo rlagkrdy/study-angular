@@ -8,7 +8,7 @@ import { MaterialModule } from './material/material.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
-import { LibDialogModule } from '../../../../dn-accountant/src/lib/modules/dialog/dialog.module';
+import { LibDialogModule } from '../../../../study-angular/src/lib/modules/dialog/dialog.module';
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import { ToolbarSearchInputComponent } from './components/toolbar-search-input/toolbar-search-input.component';
 

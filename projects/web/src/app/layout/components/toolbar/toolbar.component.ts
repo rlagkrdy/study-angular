@@ -6,7 +6,7 @@ import {
   OnInit,
 } from "@angular/core";
 import { NavigationStart, Router, RouterEvent } from "@angular/router";
-import { SubscriptionBaseComponent } from "../../../../../../cntech/src/lib/core/base-components/subscription/subscription-base.component";
+import { SubscriptionBaseComponent } from "../../../../../../study-angular/src/lib/core/base-components/subscription/subscription-base.component";
 import {
   BehaviorSubject,
   combineLatest,
@@ -16,7 +16,7 @@ import {
   startWith,
   Subscription,
 } from "rxjs";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 
 @Component({
   selector: "cn-toolbar",
@@ -48,7 +48,6 @@ export class ToolbarComponent
 
   ngOnInit(): void {
     this.addSubscription(this.initIsTransParentPage());
-    this.initIsScrolled();
     this.addSubscription(this.initIsTransparent());
     this.addSubscription(this.initMenuEvent());
     this.addSubscription(this.initIsOpenMenuChange());
@@ -127,15 +126,6 @@ export class ToolbarComponent
     });
   }
 
-  private initIsScrolled() {
-    ScrollTrigger.create({
-      start: 400,
-      end: 99999,
-      onToggle: (e) => {
-        this.isScrolled$.next(e.direction === 1);
-      },
-    });
-  }
 
   private initIsTransparent() {
     return combineLatest([

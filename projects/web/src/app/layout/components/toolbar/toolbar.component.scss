@@ -69,7 +69,6 @@
           width: 40px;
           height: 4px;
           bottom: -29px;
-          background: $blue;
         }
       }
     }
@@ -208,7 +207,6 @@
       @include text_16_b;
       @include margin-bottom-without-last-child($spacing-xl);
       text-align: center;
-      color: $blue;
     }
   }
 }

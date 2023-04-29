@@ -1,5 +1,5 @@
 import { Component, forwardRef, Input, OnInit } from '@angular/core';
-import { FormControlBaseComponent } from '../../../../../../dn-accountant/src/lib/core/form';
+import { FormControlBaseComponent } from '../../../../../../study-angular/src/lib/core/form';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Observable, startWith } from 'rxjs';
 import { map } from 'rxjs/operators';

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { NgAuthService } from '../../../../../../dn-accountant/src/lib/db/auth/auth.service';
+import { NgAuthService } from '../../../../../../study-angular/src/lib/db/auth/auth.service';
 
 @Component({
   selector: 'app-sidebar',

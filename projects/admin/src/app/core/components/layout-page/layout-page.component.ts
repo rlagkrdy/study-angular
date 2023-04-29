@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
-import { NgAuthService } from '../../../../../../dn-accountant/src/lib/db/auth/auth.service';
+import { NgAuthService } from '../../../../../../study-angular/src/lib/db/auth/auth.service';
 
 @Component({
   selector: 'app-layout-page',

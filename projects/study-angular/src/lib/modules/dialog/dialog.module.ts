@@ -8,9 +8,6 @@ import { DaumPostcodeDialogComponent } from './components/daum-postcode-dialog/d
 import { ReactiveFormsModule } from '@angular/forms';
 import { ImageDialogComponent } from './components/image-dialog/image-dialog.component';
 import { LibSharedModule } from '../../shared/shared.module';
-import {ToolbarModule} from "../../../../../app/src/app/modules/toolbar/toolbar.module";
-import { ThumbnailDialogComponent } from './components/thumbnail-dialog/thumbnail-dialog.component';
-import { PolicyDialogComponent } from './components/policy-dialog/policy-dialog.component';
 import {LibSliderModule} from "../slider/slider.module";
 
 @NgModule({
@@ -19,15 +16,12 @@ import {LibSliderModule} from "../slider/slider.module";
     CustomComponentDialogComponent,
     DaumPostcodeDialogComponent,
     ImageDialogComponent,
-    ThumbnailDialogComponent,
-    PolicyDialogComponent,
   ],
     imports: [
         CommonModule,
         MatDialogModule,
         ReactiveFormsModule,
         LibSharedModule,
-        ToolbarModule,
         LibSliderModule,
     ],
   providers: [NgDialogService],
