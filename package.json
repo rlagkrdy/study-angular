@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "======serve======": "",
-    "start:local:web": "ng serve --configuration local --project web",
+    "start:local:web": "ng serve --configuration local --project web --disable-host-check",
     "start:local:admin": "ng serve --configuration local --project admin  --port 4201",
     "start:prod:web": "ng serve --configuration production --project web",
     "start:prod:admin": "ng serve --configuration production --project admin  --port 4201",
